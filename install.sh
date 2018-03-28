@@ -1,6 +1,20 @@
 #/bin/bash
-sudo apt-get install build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev
-sudo apt install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvidcore-dev libx264-dev libatlas-base-dev gfortran
+
+#build tools
+sudo apt install -y build-essential cmake git pkg-config
+
+#GUI
+sudo apt install -y libgtk2.0-dev
+
+#python
+sudo apt install -y python-dev python-tk python-numpy
+
+#parallelism and linear algebra
+sudo apt install -y libtbb2 libtbb-dev libatlas-base-dev gfortran
+
+#media
+sudo apt install -y libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvidcore-dev libx264-dev libgdal-dev
+
 cd ~
 git clone https://github.com/opencv/opencv.git
 git clone https://github.com/opencv/opencv_contrib.git
@@ -14,6 +28,9 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D INSTALL_PYTHON_EXAMPLES=ON \
     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
     -D OPENCV_TEST_DATA_PATH=~/opencv_extra/testdata \
+    -D WITH_OPENGL=ON \
+    -D WITH_TBB=ON \
+    -D WITH_GDAL=ON \
     -D BUILD_EXAMPLES=ON ..
 make
 sudo make install
