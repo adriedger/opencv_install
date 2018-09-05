@@ -32,5 +32,5 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D WITH_TBB=ON \
     -D WITH_GDAL=ON \
     -D BUILD_EXAMPLES=ON ..
-make
+make -j4
 sudo make install
