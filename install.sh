@@ -1,5 +1,6 @@
 #/bin/bash
 #To test image stitching: ./example_cpp_stitching ~/opencv_extra/testdata/stitching/boat* --output ~/stich_out.jpg
+#if installing from source on 4.0 use flag OPENCV_ENABLE_NONFREE=ON
 
 #build tools
 sudo apt install -y build-essential cmake git pkg-config
@@ -20,7 +21,12 @@ cd ~
 git clone https://github.com/opencv/opencv.git
 git clone https://github.com/opencv/opencv_contrib.git
 git clone https://github.com/opencv/opencv_extra.git
+cd ~/opencv_contrib
+git checkout 3.4
+git pull
 cd ~/opencv
+git checkout 3.4
+git pull
 mkdir build
 cd build
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
@@ -32,7 +38,6 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D WITH_OPENGL=ON \
     -D WITH_TBB=ON \
     -D WITH_GDAL=ON \
-    -D BUILD_EXAMPLES=ON \
-    -D OPENCV_ENABLE_NONFREE=ON ..
+    -D BUILD_EXAMPLES=ON ..
 make -j4
 make install
