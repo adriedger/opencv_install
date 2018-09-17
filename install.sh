@@ -1,12 +1,11 @@
 #/bin/bash
 #To test image stitching: ./example_cpp_stitching ~/opencv_extra/testdata/stitching/boat* --output ~/stich_out.jpg
-#if installing from source on 4.0 use flag OPENCV_ENABLE_NONFREE=ON
 
 #build tools
 sudo apt install -y build-essential cmake git pkg-config
 
 #GUI
-sudo apt install -y libgtk2.0-dev
+sudo apt install -y libgtk2.0-dev eog
 
 #python
 sudo apt install -y python-dev python-tk python-numpy
