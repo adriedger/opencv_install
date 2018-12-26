@@ -5,7 +5,7 @@
 sudo apt install -y build-essential cmake git pkg-config
 
 #GUI
-sudo apt install -y libgtk2.0-dev eog
+sudo apt install -y libgtk2.0-dev eog mirage
 
 #python
 sudo apt install -y python-dev python-tk python-numpy
