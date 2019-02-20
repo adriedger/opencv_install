@@ -1,5 +1,4 @@
 #/bin/bash
-#To test image stitching: ./example_cpp_stitching ~/opencv_extra/testdata/stitching/boat* --output ~/stich_out.jpg
 
 #build tools
 sudo apt install -y build-essential cmake git pkg-config
@@ -8,7 +7,7 @@ sudo apt install -y build-essential cmake git pkg-config
 sudo apt install -y libgtk2.0-dev eog mirage
 
 #python
-sudo apt install -y python-dev python-tk python-numpy
+sudo apt install -y python-dev python-tk python-numpy python-pip
 
 #parallelism and linear algebra
 sudo apt install -y libtbb2 libtbb-dev libatlas-base-dev gfortran
@@ -21,10 +20,10 @@ git clone https://github.com/opencv/opencv.git
 git clone https://github.com/opencv/opencv_contrib.git
 git clone https://github.com/opencv/opencv_extra.git
 cd ~/opencv_contrib
-git checkout 3.4
+git checkout 3.4.2
 git pull
 cd ~/opencv
-git checkout 3.4
+git checkout 3.4.2
 git pull
 mkdir build
 cd build
