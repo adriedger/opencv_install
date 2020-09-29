@@ -1,4 +1,5 @@
 #/bin/bash
+#to uninstall call make uninstall in build directory, then remove build directory
 
 #build tools
 sudo apt install -y build-essential cmake git pkg-config
